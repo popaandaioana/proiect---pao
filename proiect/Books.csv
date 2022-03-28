@@ -1,0 +1,6 @@
+isbn, bookTitle, pageNumber, language, authors, apparitionDate, domain
+1, Lumea in care traim, 340, en, Richard Haass, 28.03.2020, 5
+2, Lumea in care traim2, 340, en, Richard Haass, 28.03.2020, 6
+3, Lumea in care traim3, 340, ro, Richard Haass, 02.04.1883, 5
+4, Luceafarul, 100, ro, Mihai Eminescu, 02.04.1883, 8
+5, Lacul, 90, ro, Mihai Eminescu, 02.03.1883, 8

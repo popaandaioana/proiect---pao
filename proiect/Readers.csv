@@ -1,0 +1,3 @@
+readerId, readerName, readerAdress, readerEmail, readerPhone, readerBirthDate, numberBorrowedBooks
+3, Banescu Vasy, Craiova, vasy@gamil.com, 0712345678, 01.01.2001, 7
+4, Popa Anda, Bucuresti, anda@gmail.com, 0728516289, 02.02.2002, 3
