@@ -1,5 +1,11 @@
 package Library;
 
+import BookInfo.Author;
+import BookInfo.Book;
+import BookInfo.Domain;
+import BookInfo.Language;
+import Readers.ReaderB;
+
 import java.io.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -11,6 +17,7 @@ public class Administrator {
     }
 
 
+    // returneaza numele librariei
     public String libName() {
         String name = new String();
         File file = new File("inputName");
@@ -23,7 +30,7 @@ public class Administrator {
     }
 
 
-
+    //initializarea unui obiect de tip Book cu informatiile corespunzatoare
     private static Book initBook(String infoBook) throws ParseException {
         int isbn;
         String bookTitle;
@@ -48,7 +55,7 @@ public class Administrator {
     }
 
 
-
+    // Treemap cu cartile din librarie structurate pe domenii
     public TreeMap<String, List<Book>> treeMapBooks() {
         TreeMap<String, List<Book>> treeMap = new TreeMap<>();
         File file = new File("Books.csv");
@@ -68,6 +75,7 @@ public class Administrator {
 
     }
 
+    // convertire String la obiect de tip Language
     public static Language strTolang(String tkn){
         Language language = new Language();
         File file = new File("Languages.csv");
@@ -90,7 +98,7 @@ public class Administrator {
 
 
 
-
+    // convertire String la obiect de tip Author
     public static Author strToAuth(String tkn){
         Author author = new Author();
         File file = new File("Authors.csv");
@@ -113,6 +121,7 @@ public class Administrator {
     }
 
 
+    // convertire String la obiect de tip Domain
     public static Domain strTodom(String tkn){
         Domain domain = new Domain();
         File file = new File("Domains.csv");
@@ -135,7 +144,7 @@ public class Administrator {
     }
 
 
-
+    // initializare a unui obiect de tip ReaderB cu informatiile corespunzatoare
     private static ReaderB initReader(String infoReader) throws ParseException {
         int readerId;
         String readerName;
@@ -159,6 +168,7 @@ public class Administrator {
     }
 
 
+    // lista cu cititorii din librarie
     public List<ReaderB> readers() {
         List <ReaderB> readersList = new ArrayList<>();
         File file = new File("Readers.csv");

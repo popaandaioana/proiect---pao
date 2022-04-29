@@ -1,6 +1,12 @@
 package Library;
 
-import java.io.File;
+import AuditService.Audit;
+import BookInfo.Author;
+import BookInfo.Book;
+import BookInfo.Domain;
+import BookInfo.Language;
+import Readers.ReaderB;
+
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -12,6 +18,7 @@ public class Library {
     private List<ReaderB> readers;
 
     Administrator adm = new Administrator();
+
 
     public Library() {
     }
@@ -38,6 +45,7 @@ public class Library {
 //add new reader
 
     public void addReader() {
+        System.out.println("Adauga un cititor nou: ");
         Scanner input = new Scanner(System.in);
         System.out.print("Reader Id: ");
         String id = input.nextLine();
@@ -63,6 +71,9 @@ public class Library {
         int borbooks1 = Integer.parseInt(borbooks);
         ReaderB newReader = new ReaderB(id1, name, address, email, phone, birth1, borbooks1);
         readers.add(newReader);
+        //
+        System.out.println(readers.get(readers.size() - 1).toString());
+        //
         System.out.println("Reader added");
     }
 
@@ -70,6 +81,7 @@ public class Library {
     //add new book
 
     public void addBook() {
+        System.out.println("Adauga o carte noua: ");
         Scanner input = new Scanner(System.in);
         System.out.print("Book Isbn: ");
         String isbn = input.nextLine();
@@ -107,6 +119,7 @@ public class Library {
     //print library's readers
 
     public void printReaders() {
+        System.out.println("Cititorii librariei sunt: ");
         for (int i = 0; i < readers.size(); i++)
             System.out.println(readers.get(i).toString());
     }
@@ -115,6 +128,7 @@ public class Library {
     //print library's books from 1 specific domain (SF in this case)
 
     public void printBooksFromDomain() {
+        System.out.println("Cartile din domeniul SF sunt: ");
         for (int i = 0; i < libraryBooks.get("SF").size(); i++)
             System.out.println(libraryBooks.get("SF").get(i).toString());
     }
@@ -123,6 +137,7 @@ public class Library {
     //print library's book from 1 specific author
 
     public void printBooksFromAuthor(String a) {
+        System.out.println("Cartile scrise de Mihai Eminescu: ");
         for(Map.Entry<String, List <Book>> entry : libraryBooks.entrySet()) {
             for(Book book : entry.getValue())
             {
@@ -137,6 +152,7 @@ public class Library {
     //delete reader
 
     public void deleteReader(String name){
+        System.out.println("Sterge un cititor: ");
         for(int i = 0; i < readers.size(); i++)
         {
             if(readers.get(i).getReaderName().equals(name))
@@ -150,6 +166,7 @@ public class Library {
     //print books in one specific language
 
     public void printBooksInLanguage(String cod) {
+        System.out.println("Cartile scrise in engleza: ");
         for(Map.Entry<String, List <Book>> entry : libraryBooks.entrySet()) {
             for(Book book : entry.getValue())
             {
@@ -164,6 +181,7 @@ public class Library {
     //print books from one specific year
 
     public void printBooksFromYear(String d) {
+        System.out.println("Cartile aparute la data 02.04.1883: ");
         for(Map.Entry<String, List <Book>> entry : libraryBooks.entrySet()) {
             for(Book book : entry.getValue())
             {
@@ -178,6 +196,7 @@ public class Library {
 
 
     public void printAuthors(){
+        System.out.println("Autorii librariei sunt: ");
         HashSet<String> set = new HashSet<String>();
         for(Map.Entry<String, List <Book>> entry : libraryBooks.entrySet()) {
             for(Book book : entry.getValue())
@@ -187,8 +206,6 @@ public class Library {
         }
         System.out.println(set);
     }
-
-
 
 
 }
