@@ -60,14 +60,14 @@ public class Administrator {
         TreeMap<String, List<Book>> treeMap = new TreeMap<>();
         File file = new File("Books.csv");
         try(Scanner scanner = new Scanner(file)){
-             scanner.nextLine();
-             while(scanner.hasNextLine()){
-                 String currentLine = scanner.nextLine();
-                 Book b = initBook(currentLine);
-                 if(!treeMap.containsKey(b.getDomain().getDomainName()))
-                     treeMap.put(b.getDomain().getDomainName(), new ArrayList<Book>());
-                 treeMap.get(b.getDomain().getDomainName()).add(b);
-             }
+            scanner.nextLine();
+            while(scanner.hasNextLine()){
+                String currentLine = scanner.nextLine();
+                Book b = initBook(currentLine);
+                if(!treeMap.containsKey(b.getDomain().getDomainName()))
+                    treeMap.put(b.getDomain().getDomainName(), new ArrayList<Book>());
+                treeMap.get(b.getDomain().getDomainName()).add(b);
+            }
         }catch (Exception e){
             System.out.println("Error: " + e.getMessage());
         }

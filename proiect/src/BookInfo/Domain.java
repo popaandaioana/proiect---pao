@@ -1,5 +1,9 @@
 package BookInfo;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Scanner;
+
 public class Domain {
     private int domainId;
     private String domainName;
@@ -12,6 +16,24 @@ public class Domain {
         this.domainName = domainName;
         this.recommandedAge = recommandedAge;
     }
+
+    //***************
+    public Domain(ResultSet in) throws SQLException {
+        this.domainId = in.getInt("domainId");
+        this.domainName = in.getString("domainName");
+        this.recommandedAge = in.getInt("recommandedAge");
+    }
+
+    public void read(Scanner scanner) {
+        scanner = new Scanner(System.in);
+        System.out.println("Domain Id: ");
+        this.domainId = Integer.parseInt(scanner.nextLine());
+        System.out.println("Domain Name: ");
+        this.domainName = scanner.nextLine();
+        System.out.println("Recommanded age: ");
+        this.recommandedAge = Integer.parseInt(scanner.nextLine());
+    }
+    //*************
 
     public int getDomainId() {
         return domainId;

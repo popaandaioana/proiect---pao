@@ -2,6 +2,7 @@ package BookInfo;
 
 import java.util.*;
 
+
 public class Book {
     private int isbn;
     private String bookTitle;
@@ -24,6 +25,7 @@ public class Book {
         this.apparitionDate = apparitionDate;
         this.domain = domain;
     }
+
 
     public int getIsbn() {
         return isbn;
